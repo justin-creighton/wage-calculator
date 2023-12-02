@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/eca654a3e4.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="section section-1">
+        <div class="container cont-1">
+          <h1>HOW IT WORKS</h1>
+          <div class="instructions">
+            <div class="box">
+              <div class="number"><span>1</span></div>
+              <div class="guide-text"><span>Enter your current WAGE</span></div>
+            </div>
+            <div class="box">
+              <div class="number"><span>2</span></div>
+              <div class="guide-text"><span>Enter your INCREASE</span></div>
+            </div>
+            <div class="box">
+              <div class="number"><span>3</span></div>
+              <div class="guide-text"><span>Get your RESULTS</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section section-2">
+        <div class="container cont-2">
+          <h1>INSERT INFO BELOW</h1>
+          <div class="input-fields-holder">
+            <div class="input-fields">
+              <input id="myWage" type="number" />
+              <div class="indicator"><span>Wage (R)</span></div>
+              <div class="info">
+                <span class="info-btn" data-for="box-1">
+                  <i class="fas fa-info"></i>
+                </span>
+              </div>
+            </div>
+            <div class="info-box" id="box-1">
+              <span> Enter your current wage </span>
+            </div>
+            <div class="input-fields">
+              <input id="myIncreasePercentage" type="number" />
+              <div class="indicator"><span>Increase (%)</span></div>
+              <div class="info">
+                <span class="info-btn" data-for="box-2">
+                  <i class="fas fa-info"></i>
+                </span>
+              </div>
+            </div>
+            <div class="info-box" id="box-2">
+              <span> Enter your increase as a % </span>
+            </div>
+            <div class="input-fields">
+              <input id="myIncreaseRand" type="number" />
+              <div class="indicator"><span>Increase (R)</span></div>
+              <div class="info">
+                <span class="info-btn" data-for="box-3">
+                  <i class="fas fa-info"></i>
+                </span>
+              </div>
+            </div>
+            <div class="info-box" id="box-3">
+              <span> Enter your increase as Rand </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section section-3">
+        <div class="container cont-3">
+          <div class="calculated-values-holder">
+            <div class="calculated-values">
+              <div class="description">
+                <span>MY WAGE AFTER THE INCREASE</span>
+              </div>
+              <div class="values">
+                <span id="myWageAfter">R00.0</span>
+              </div>
+              <div class="info">
+                <span class="info-btn" data-for="box-4">
+                  <i class="fas fa-info"></i>
+                </span>
+              </div>
+            </div>
+            <div class="info-box" id="box-4">
+              <span> This is your new wage after the increase. </span>
+            </div>
+            <div class="calculated-values">
+              <div class="description">
+                <span>PRICE INCREASES (INFLATION RATE)</span>
+              </div>
+              <div class="values"><span id="inflationRate">00.0%</span></div>
+              <div class="info">
+                <span class="info-btn" data-for="box-5">
+                  <i class="fas fa-info"></i>
+                </span>
+              </div>
+            </div>
+            <div class="info-box" id="box-5">
+              <span>
+                This is how much the price of goods and services increased over
+                the last year.
+              </span>
+            </div>
+            <div class="calculated-values">
+              <div class="description">
+                <span>REAL INCREASE AFTER INFLATION</span>
+              </div>
+              <div class="values"><span id="myIncreaseAfter">00.0%</span></div>
+              <div class="info">
+                <span class="info-btn" data-for="box-6">
+                  <i class="fas fa-info"></i>
+                </span>
+              </div>
+            </div>
+            <div class="info-box" id="box-6">
+              <span>
+                This is how much of your increase is left after price increases.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section section-4">
+        <div class="container cont-4">
+          <div class="increase-holder">
+            <h1 class="title-1 gauge-titles">
+              TOTAL INCREASE
+              <span id="increasePercentage"></span>
+            </h1>
+            <div class="gauge-holder">
+              <div class="increase-gauge">
+                <div class="inflation-bar">
+                  <span class="floating-labels label-1 sink">
+                    <span class="label-title">INFLATION INCREASE</span>
+                    <span class="hidden-label">INFLATION INCREASE</span>
+                    <span class="stationary-value"></span>
+                    <span class="pointer-arrow arrow-1"></span>
+                  </span>
+                  <span id="inflation" class="label"> -- </span>
+                </div>
+                <div class="actual-bar">
+                  <span class="floating-labels label-2 sink">
+                    <span class="label-title">REAL INCREASE</span>
+                    <span class="hidden-label">REAL INCREASE</span>
+                    <span class="stationary-value"></span>
+                    <span class="pointer-arrow arrow-2"></span>
+                  </span>
+                  <span id="realIncreasePercentage" class="label"> -- </span>
+                </div>
+              </div>
+            </div>
+            <h1 class="title-2 gauge-titles">
+              TOTAL INCREASE
+              <span id="increaseRand"></span>
+            </h1>
+            <div class="gauge-holder">
+              <div class="increase-gauge">
+                <div class="inflation-bar">
+                  <span class="floating-labels label-1 sink">
+                    <span class="label-title">INFLATION INCREASE</span>
+                    <span class="hidden-label">INFLATION INCREASE</span>
+                    <span class="stationary-value"></span>
+                    <span class="pointer-arrow arrow-3"></span>
+                  </span>
+                  <span id="inflationAsRand" class="label">--</span>
+                </div>
+                <div class="actual-bar">
+                  <span class="floating-labels label-2 sink">
+                    <span class="label-title">REAL INCREASE</span>
+                    <span class="hidden-label">REAL INCREASE</span>
+                    <span class="stationary-value"></span>
+                    <span class="pointer-arrow arrow-4"></span>
+                  </span>
+                  <span id="realIncreaseRand" class="label">--</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

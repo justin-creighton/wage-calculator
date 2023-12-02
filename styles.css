@@ -1,0 +1,453 @@
+@font-face {
+  font-family: "Roboto Custom";
+  src: url("./assets/fonts/Roboto/Roboto-Regular.ttf") format("ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.calculator h1 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.calculator {
+  width: auto;
+}
+
+.calculator .section .container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.calculator .section-2 {
+  background-color: rgb(220, 220, 220);
+}
+
+.calculator .section-4 {
+  background-color: rgb(220, 220, 220);
+}
+
+/* SECTION 1 STYLES */
+.calculator .section {
+  padding: 2rem 5rem 2rem 5rem;
+}
+
+.calculator .instructions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.calculator .instructions .box {
+  display: grid;
+  grid-template-columns: 4rem auto;
+}
+
+.calculator .instructions .box .number {
+  background: rgb(193, 38, 42);
+  height: 4rem;
+  border-radius: 50%;
+  position: relative;
+}
+
+.calculator .instructions .box .number span {
+  font-size: 2rem;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.calculator .instructions .box .guide-text {
+  position: relative;
+}
+
+.calculator .instructions .box .guide-text span {
+  left: 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* SECTION 2 and 3 STYLES */
+
+.calculator .input-fields-holder .input-fields {
+  height: 3.4rem;
+}
+.calculator .input-fields-holder .input-fields,
+.calculator .calculated-values-holder .calculated-values {
+  display: grid;
+  grid-template-columns: auto 8rem 3rem;
+  margin-bottom: 0.6rem;
+}
+
+.calculator .input-fields-holder .input-fields input::-webkit-outer-spin-button,
+.calculator
+  .input-fields-holder
+  .input-fields
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.calculator .input-fields-holder .input-fields input {
+  border-radius: 0;
+  border: none;
+  text-align: center;
+}
+
+.calculator .input-fields-holder .input-fields input::placeholder {
+  padding-left: 1rem;
+  text-align: left;
+}
+
+.calculator .input-fields-holder .input-fields input:focus {
+  outline: none;
+}
+
+.calculator .input-fields-holder .input-fields input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.calculator .input-fields-holder .input-fields .indicator,
+.calculator .calculated-values-holder .calculated-values .values {
+  position: relative;
+  background: rgb(193, 38, 42);
+}
+
+.calculator .input-fields-holder .input-fields .indicator span,
+.calculator .calculated-values-holder .calculated-values .values span {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}
+
+.calculator .input-fields-holder .input-fields .info,
+.calculator .calculated-values-holder .calculated-values .info {
+  position: relative;
+}
+
+.calculator .input-fields-holder .input-fields .info span,
+.calculator .calculated-values-holder .calculated-values .info span {
+  border-radius: 50%;
+  border: 1px solid rgb(53, 53, 53);
+  height: 1.4rem;
+  width: 1.4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease-in-out;
+}
+
+.calculator .input-fields-holder .input-fields .info span:hover,
+.calculator .calculated-values-holder .calculated-values .info span:hover {
+  background: rgb(193, 38, 42);
+  border: 1px solid white;
+}
+
+.calculator .input-fields-holder .input-fields .info span:hover i,
+.calculator .calculated-values-holder .calculated-values .info span:hover i {
+  color: white;
+}
+
+.calculator .input-fields-holder .input-fields .info span i,
+.calculator .calculated-values-holder .calculated-values span i {
+  color: rgb(53, 53, 53);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* SECTION 3 STYLES */
+.calculator .calculated-values-holder .calculated-values {
+  height: 3.6rem;
+}
+
+.calculator .calculated-values-holder .calculated-values .description {
+  border: 1px solid rgb(185, 185, 185);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.calculator .calculated-values-holder .calculated-values .description span {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+
+/* SECTION 4 STYLES */
+.section-4 h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.title-2 {
+  margin-top: 2rem !important;
+}
+
+.info-box {
+  position: relative;
+  background: rgb(193, 38, 42);
+  margin: 0 3rem 0 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  padding: 0 0.5rem;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05), -5px -5px 5px rgba(0, 0, 0, 0.05);
+}
+
+.info-box span {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: white;
+}
+
+.open {
+  margin: 0.5rem 3rem 0.5rem 0;
+  height: 3.6rem;
+  opacity: 1;
+  padding: 0.5rem;
+}
+
+.label {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.hidden-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 0.7rem;
+  opacity: 0;
+}
+
+.gauge-holder {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+}
+
+.gauge-holder .increase-gauge {
+  width: 100%;
+  height: 3.6rem;
+  position: relative;
+}
+
+.gauge-holder .increase-gauge .inflation-bar,
+.gauge-holder .increase-gauge .actual-bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.gauge-holder .increase-gauge .inflation-bar {
+  width: 50%;
+  background: rgb(193, 38, 42);
+  z-index: 1;
+  left: 0;
+}
+
+.gauge-holder .increase-gauge .actual-bar {
+  width: 50%;
+  z-index: 2;
+  background: rgb(190, 190, 190);
+  right: 0;
+}
+
+.gauge-holder .increase-gauge .floating-labels {
+  position: absolute;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  border-radius: 0.3rem;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.gauge-holder .increase-gauge .label-1,
+.gauge-holder .increase-gauge .label-1 .arrow-1,
+.gauge-holder .increase-gauge .label-1 .arrow-3 {
+  background: rgb(193, 38, 42);
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 0.2rem;
+}
+
+.gauge-holder .increase-gauge .label-2,
+.gauge-holder .increase-gauge .label-2 .arrow-2,
+.gauge-holder .increase-gauge .label-2 .arrow-4 {
+  background: rgb(190, 190, 190);
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 0.2rem;
+}
+
+.gauge-holder .increase-gauge .floating-labels .pointer-arrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  height: 1rem;
+  width: 1.4rem;
+  padding: 0.1rem;
+  transform: translateX(-50%) rotateZ(180deg);
+  clip-path: polygon(0 100%, 50% 0, 100% 100%, 0 100%);
+}
+
+/* CLASSES FOR JS */
+.inflation-less-than {
+  right: initial !important;
+  left: 0 !important;
+}
+
+.inflation-more-than {
+  left: initial !important;
+  right: 0 !important;
+}
+
+.actual-less-than {
+  right: initial !important;
+  left: 0 !important;
+  background: rgb(190, 190, 190) !important;
+}
+
+.actual-more-than {
+  left: initial !important;
+  right: 0 !important;
+  background: rgb(142, 199, 154) !important;
+}
+
+.float {
+  top: -2.7rem;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.sink {
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+@media only screen and (max-width: 1158px) {
+  .calculator .section {
+    padding: 2rem;
+    width: 100%;
+  }
+
+  .calculator .section .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .calculator .section {
+    padding: 2rem;
+    width: 100%;
+  }
+
+  .calculator .section .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 602px) {
+  .calculator h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .calculator .instructions .box {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: auto;
+    grid-gap: 1rem;
+  }
+
+  .calculator .instructions .box .number {
+    height: 4rem;
+    width: 4rem;
+    margin: 0 auto;
+  }
+
+  .calculator .instructions .box .guide-text {
+    height: 2rem;
+    width: 100%;
+  }
+
+  .calculator .instructions .box .guide-text span {
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .calculator .increase-holder .gauge {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .calculator .instructions {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+  }
+
+  .calculator .section-1 *,
+  .calculator .section-2 *,
+  .calculator .section-3 * {
+    font-size: 0.8rem;
+  }
+
+  .calculator .input-fields-holder .input-fields,
+  .calculator .calculated-values-holder .calculated-values {
+    grid-template-columns: auto 6rem 3rem;
+  }
+
+  .calculator .increase-holder .gauge {
+    display: grid;
+    grid-template-columns: auto 4rem 6rem;
+  }
+
+  .calculator .increase-holder .gauge .increase-title {
+    margin-left: 0.4rem;
+  }
+
+  .gauge-holder {
+    width: 100%;
+  }
+
+  .calculator h1 {
+    font-size: 1.6rem !important;
+    font-weight: 500;
+  }
+}
